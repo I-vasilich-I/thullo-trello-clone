@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "server": "cd server && npm run docker",
-    "test": "npm run test:server:unit && npm run test:server:e2e",
+    "client": "cd client && npm run dev",
+    "test": "npm run test:server:unit && npm run test:server:e2e && npm run test:client",
     "test:server:unit": "cd server && npm run test",
-    "test:server:e2e": "cd server && npm run test:e2e"
+    "test:server:e2e": "cd server && npm run test:e2e",
+    "test:client": "cd client && npm run test"
   },
   "repository": {
     "type": "git",
