@@ -3,13 +3,13 @@
 exports[`Header renders header unchanged 1`] = `
 <div>
   <header
-    class="sc-6ac5787-0 zzdUv"
+    class="sc-ff2bb5c9-0 gVVKFc"
   >
     <div
-      class="sc-6ac5787-1 euTMUW"
+      class="sc-ff2bb5c9-1 fWQRbO"
     >
       <div
-        class="sc-6ac5787-2 felXja"
+        class="sc-ff2bb5c9-2 kQTyW"
       >
         <a
           href="/"
@@ -39,19 +39,19 @@ exports[`Header renders header unchanged 1`] = `
         </a>
       </div>
       <div
-        class="sc-6ac5787-3 fkeOUD"
+        class="sc-ff2bb5c9-3 hJMvlf"
       >
         <div
-          class="sc-6ac5787-4 kUFmnn"
+          class="sc-ff2bb5c9-4 jahdHr"
         >
           <a
-            class="sc-6ac5787-5 DMWdE"
+            class="sc-ff2bb5c9-5 hAYLrA"
             href="/signin"
           >
             Sign in
           </a>
           <a
-            class="sc-6ac5787-5 cbarqh"
+            class="sc-ff2bb5c9-5 dhZyWZ"
             href="/signup"
           >
             Sign up

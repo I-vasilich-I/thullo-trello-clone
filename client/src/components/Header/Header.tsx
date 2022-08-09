@@ -15,7 +15,7 @@ const StyledHeader = styled.header`
   top: 0;
   width: 100%;
   height: 68.31px;
-  background: $white;
+  background-color: ${({ theme }) => theme.colors.$white};
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.05);
 `;
 
