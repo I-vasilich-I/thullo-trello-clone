@@ -9,7 +9,8 @@
     "test": "npm run test:server:unit && npm run test:server:e2e && npm run test:client",
     "test:server:unit": "cd server && npm run test",
     "test:server:e2e": "cd server && npm run test:e2e",
-    "test:client": "cd client && npm run test"
+    "test:client": "cd client && npm run test",
+    "format": "prettier --write client server"
   },
   "repository": {
     "type": "git",
@@ -23,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/I-vasilich-I/thullo-trello-clone/issues"
   },
-  "homepage": "https://github.com/I-vasilich-I/thullo-trello-clone#readme"
+  "homepage": "https://github.com/I-vasilich-I/thullo-trello-clone#readme",
+  "devDependencies": {
+    "prettier": "^2.7.1"
+  }
 }

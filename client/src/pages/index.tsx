@@ -1,5 +1,6 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import SectionHero from 'src/components/SectionHero/SectionHero';
 
 const Home: NextPage = () => {
   return (
@@ -11,12 +12,10 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-        <h1>
-          Welcome to Thullo - Trello clone
-        </h1>
+        <SectionHero />
       </main>
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

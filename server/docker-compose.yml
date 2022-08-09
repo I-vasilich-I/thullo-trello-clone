@@ -1,22 +1,22 @@
 services:
-  nest: 
-    build: 
+  nest:
+    build:
       context: .
       dockerfile: ./Dockerfile
     container_name: thullo-nest
     restart: unless-stopped
     networks:
       - nest_postgres_network
-    ports: 
+    ports:
       - ${PORT}:${PORT}
     depends_on:
       - postgres
     volumes:
       - ./:/usr/src/app
       - /usr/src/app/node_modules
-  
-  postgres: 
-    build: 
+
+  postgres:
+    build:
       context: .
       dockerfile: ./db/Dockerfile
     container_name: thullo-postgres
@@ -24,7 +24,7 @@ services:
     restart: unless-stopped
     networks:
       - nest_postgres_network
-    ports: 
+    ports:
       - ${POSTGRES_PORT}:${POSTGRES_PORT}
     environment:
       - POSTGRES_USER=${POSTGRES_USER}
@@ -33,7 +33,7 @@ services:
     volumes:
       - nest-postgres:/var/lib/postgresql/data
       - nest-postgres-logs:/var/log/postgresql/
-  
+
   adminer:
     image: adminer
     restart: unless-stopped
