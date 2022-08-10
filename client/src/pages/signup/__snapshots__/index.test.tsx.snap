@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sign up page renders sign up page unchanged 1`] = `
+<div>
+  <section>
+    Sign up
+  </section>
+</div>
+`;
