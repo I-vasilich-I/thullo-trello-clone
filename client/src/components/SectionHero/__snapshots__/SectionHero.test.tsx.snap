@@ -3,13 +3,13 @@
 exports[`SectionHero renders hero section unchanged 1`] = `
 <div>
   <section
-    class="sc-102e2c5f-0 firxws"
+    class="sc-8d31c324-0 laXkFI"
   >
     <div
-      class="sc-102e2c5f-1 eWdJpZ"
+      class="sc-8d31c324-1 jtxGfV"
     >
       <div
-        class="sc-102e2c5f-2 edCxyW"
+        class="sc-8d31c324-2 kbSCJa"
       >
         <h2>
           Thullo helps teams move work forward.
@@ -19,7 +19,7 @@ exports[`SectionHero renders hero section unchanged 1`] = `
         </p>
       </div>
       <span
-        class="sc-102e2c5f-3 eNESBt"
+        class="sc-8d31c324-3 ilmat"
       >
         <span
           style="box-sizing: border-box; display: inline-block; overflow: hidden; width: 439px; height: 568px; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"

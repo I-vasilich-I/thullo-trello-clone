@@ -2,9 +2,10 @@ import Image from 'next/image';
 import styled from 'styled-components';
 import { font } from 'src/styles/mixins.style';
 import HeroImage from 'public/images/hero.png';
+import { HEADER_HEIGHT } from 'src/styles/variables.style';
 
 const StyledSection = styled.section`
-  padding: 150px 20px 20px 20px;
+  padding: calc(150px - ${HEADER_HEIGHT}) 20px 20px 20px;
   width: 100%;
   background: linear-gradient(0deg, #fff, #eae6ff 100%);
   background-image: linear-gradient(0deg, rgb(255, 255, 255), rgb(234, 230, 255) 100%);

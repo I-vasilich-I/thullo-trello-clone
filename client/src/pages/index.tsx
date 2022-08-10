@@ -10,9 +10,9 @@ const Home: NextPage = () => {
         <meta name="description" content="Trello clone" />
         <link rel="icon" href="/favicon.svg" />
       </Head>
-      <main>
+      <>
         <SectionHero />
-      </main>
+      </>
     </>
   );
 };

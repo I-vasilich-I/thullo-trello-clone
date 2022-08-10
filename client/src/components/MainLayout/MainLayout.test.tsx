@@ -8,7 +8,7 @@ describe('Main layout', () => {
     render(
       <MockTheme>
         <MainLayout>
-          <h1>Home</h1>
+          <h2>Home</h2>
         </MainLayout>
       </MockTheme>,
     );
@@ -16,7 +16,7 @@ describe('Main layout', () => {
     const logo = screen.getByAltText('logo');
     expect(logo).toBeInTheDocument();
 
-    const heading = screen.getByRole('heading', { level: 1 });
+    const heading = screen.getByRole('heading', { level: 2 });
     expect(heading).toBeInTheDocument();
   });
 });

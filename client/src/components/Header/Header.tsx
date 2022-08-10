@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { LINKS } from 'src/constants';
 import LogoImg from 'public/images/Logo.svg';
 import { font } from 'src/styles/mixins.style';
-import { ReactNode } from 'react';
+import { HEADER_HEIGHT } from 'src/styles/variables.style';
 
 interface ILinkProps {
   signUp?: boolean;
@@ -14,7 +14,7 @@ const StyledHeader = styled.header`
   position: fixed;
   top: 0;
   width: 100%;
-  height: 68.31px;
+  height: ${HEADER_HEIGHT};
   background-color: ${({ theme }) => theme.colors.$white};
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.05);
 `;
