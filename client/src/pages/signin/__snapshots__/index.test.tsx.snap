@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sign in page render sign in page unchanged 1`] = `
+<div>
+  <section>
+    Sing in
+  </section>
+</div>
+`;
