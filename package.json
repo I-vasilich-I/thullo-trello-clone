@@ -1,0 +1,31 @@
+{
+  "name": "thullo-trello-clone",
+  "version": "1.0.0",
+  "description": "Trello clone",
+  "main": "index.js",
+  "scripts": {
+    "server": "cd server && npm run docker",
+    "client": "cd client && npm run dev",
+    "test": "npm run test:server:unit && npm run test:server:e2e && npm run test:client",
+    "test:server:unit": "cd server && npm run test",
+    "test:server:e2e": "cd server && npm run test:e2e",
+    "test:client": "cd client && npm run test",
+    "format": "prettier --write client server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/I-vasilich-I/thullo-trello-clone.git"
+  },
+  "keywords": [
+    "trello"
+  ],
+  "author": "Oleg Vaskevich",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/I-vasilich-I/thullo-trello-clone/issues"
+  },
+  "homepage": "https://github.com/I-vasilich-I/thullo-trello-clone#readme",
+  "devDependencies": {
+    "prettier": "^2.7.1"
+  }
+}
