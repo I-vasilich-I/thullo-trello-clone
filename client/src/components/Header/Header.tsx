@@ -1,8 +1,7 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import styled from 'styled-components';
+import Logo from 'src/elements/Logo/Logo';
 import { LINKS } from 'src/constants';
-import LogoImg from 'public/images/Logo.svg';
 import { font } from 'src/styles/mixins.style';
 import { HEADER_HEIGHT } from 'src/styles/variables.style';
 
@@ -92,11 +91,7 @@ const Header = () => {
     <StyledHeader>
       <HeaderWrapper>
         <HeaderLeft>
-          <Link href={HOME.href}>
-            <a>
-              <Image src={LogoImg} alt="logo" width={98} height={29} />
-            </a>
-          </Link>
+          <Logo />
         </HeaderLeft>
         <HeaderRight>
           <HeaderAuth>
