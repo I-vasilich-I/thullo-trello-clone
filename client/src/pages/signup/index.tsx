@@ -1,5 +1,6 @@
 import { NextPage } from 'next';
 import Head from 'next/head';
+import AuthForm from 'src/components/AuthForm/AuthForm';
 
 const SignUp: NextPage = () => {
   return (
@@ -9,7 +10,9 @@ const SignUp: NextPage = () => {
         <meta name="description" content="Sign up form" />
         <link rel="icon" href="/favicon.svg" />
       </Head>
-      <section>Sign up</section>
+      <section>
+        <AuthForm />
+      </section>
     </>
   );
 };
