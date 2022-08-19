@@ -33,7 +33,7 @@ describe('MailService', () => {
     expect(service).toBeDefined();
   });
 
-  it('calls sendMail method with correct parameters', async () => {
+  it('calls sendMail method', async () => {
     await service.sendActivationMail('User', 'email@test.com', 'url');
     expect(sendMailSpy).toBeCalled();
   });
