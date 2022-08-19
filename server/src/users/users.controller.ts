@@ -2,8 +2,11 @@ import {
   Body,
   ClassSerializerInterceptor,
   Controller,
+  Get,
   HttpCode,
   HttpStatus,
+  Param,
+  ParseUUIDPipe,
   Post,
   UseInterceptors,
 } from '@nestjs/common';
@@ -37,5 +40,11 @@ export class UsersController {
       user,
       profile,
     };
+  }
+
+  @Get('activate/:link')
+  @HttpCode(HttpStatus.OK)
+  async activate(@Param('link', new ParseUUIDPipe({ version: '4' })) link: string) {
+    await this.usersService.activate(link);
   }
 }

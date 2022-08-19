@@ -16,6 +16,7 @@ describe('UsersController', () => {
       provide: UsersService,
       useFactory: () => ({
         create: jest.fn(() => ({})),
+        activate: jest.fn(() => ({})),
       }),
     };
 
@@ -48,17 +49,18 @@ describe('UsersController', () => {
     expect(controller).toBeDefined();
   });
 
-  it('calling register method', () => {
-    const dto = new RegisterUserDto();
-    expect(controller.register(dto)).not.toEqual(null);
-  });
-
-  it('calling register method', () => {
+  it('calling register method', async () => {
     const registerDto = new RegisterUserDto();
-    controller.register(registerDto);
+    const result = await controller.register(registerDto);
 
     expect(spyUserService.create).toHaveBeenCalled();
     expect(spyProfileService.create).toHaveBeenCalled();
-    expect(spyMailService.sendActivationMail).toBeCalled();
+    expect(spyMailService.sendActivationMail).toHaveBeenCalled();
+    expect(result).not.toEqual(null);
+  });
+
+  it('calling activate method', async () => {
+    await controller.activate('link');
+    expect(spyUserService.activate).toHaveBeenCalled();
   });
 });
