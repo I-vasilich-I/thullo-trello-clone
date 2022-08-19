@@ -9,6 +9,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   app.useGlobalPipes(new ValidationPipe({ transform: true }));
+  app.setGlobalPrefix('api');
 
   const config = new DocumentBuilder().setTitle('Thullo API').build();
   const document = SwaggerModule.createDocument(app, config);
