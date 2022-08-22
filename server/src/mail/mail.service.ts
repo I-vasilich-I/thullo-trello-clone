@@ -1,25 +1,26 @@
 import { MailerService } from '@nestjs-modules/mailer';
 import { Injectable } from '@nestjs/common';
-import { ConfigService } from '@nestjs/config';
-import { API_ENDPOINTS } from '../constants';
+import { ACTIVATION_LINK_URL } from '../constants';
 
 @Injectable()
 export class MailService {
-  constructor(private mailerService: MailerService, private config: ConfigService) {}
+  constructor(private mailerService: MailerService) {}
 
   async sendActivationMail(userName = 'User', email: string, activationLink: string) {
-    const host = this.config.get('APP_HOST');
-    const port = this.config.get('PORT');
-    const url = `${host}:${port}/${API_ENDPOINTS.ACTIVATE}/${activationLink}`;
+    const url = `${ACTIVATION_LINK_URL}/${activationLink}`;
 
-    await this.mailerService.sendMail({
-      to: email,
-      subject: 'Account activation',
-      template: './activation',
-      context: {
-        name: userName,
-        url,
-      },
-    });
+    try {
+      await this.mailerService.sendMail({
+        to: email,
+        subject: 'Account activation',
+        template: './activation',
+        context: {
+          name: userName,
+          url,
+        },
+      });
+    } catch (error) {
+      console.error(error);
+    }
   }
 }

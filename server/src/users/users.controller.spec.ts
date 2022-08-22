@@ -1,3 +1,4 @@
+import { ConfigService } from '@nestjs/config';
 import { Test, TestingModule } from '@nestjs/testing';
 import { MailService } from '../mail/mail.service';
 import { ProfilesService } from '../profiles/profiles.service';
@@ -36,7 +37,7 @@ describe('UsersController', () => {
 
     const module: TestingModule = await Test.createTestingModule({
       controllers: [UsersController],
-      providers: [UserServiceProvider, ProfilesServiceProvider, MailServiceProvider],
+      providers: [UserServiceProvider, ProfilesServiceProvider, MailServiceProvider, ConfigService],
     }).compile();
 
     controller = module.get<UsersController>(UsersController);

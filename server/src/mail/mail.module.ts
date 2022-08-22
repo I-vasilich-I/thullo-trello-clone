@@ -11,8 +11,7 @@ import { MailService } from './mail.service';
     MailerModule.forRootAsync({
       useFactory: async (config: ConfigService) => ({
         transport: {
-          host: config.get('MAIL_HOST'),
-          secure: false,
+          service: 'Yandex',
           auth: {
             user: config.get('MAIL_USER'),
             pass: config.get('MAIL_PASSWORD'),
@@ -32,7 +31,7 @@ import { MailService } from './mail.service';
       inject: [ConfigService],
     }),
   ],
-  providers: [MailService, ConfigService],
+  providers: [MailService],
   exports: [MailService],
 })
 export class MailModule {}

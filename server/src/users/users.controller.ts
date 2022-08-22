@@ -8,8 +8,11 @@ import {
   Param,
   ParseUUIDPipe,
   Post,
+  Redirect,
   UseInterceptors,
 } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
+import { DEFAULT_CLIENT_URL } from '../constants';
 import { MailService } from '../mail/mail.service';
 import { ProfilesService } from '../profiles/profiles.service';
 import { RegisterUserDto } from './dto/register-user.dto';
@@ -21,6 +24,7 @@ export class UsersController {
     private usersService: UsersService,
     private profileService: ProfilesService,
     private mailService: MailService,
+    private config: ConfigService,
   ) {}
 
   @UseInterceptors(ClassSerializerInterceptor)
@@ -44,7 +48,12 @@ export class UsersController {
 
   @Get('activate/:link')
   @HttpCode(HttpStatus.OK)
-  async activate(@Param('link', new ParseUUIDPipe({ version: '4' })) link: string) {
+  @Redirect(DEFAULT_CLIENT_URL)
+  async activate(@Param('link', ParseUUIDPipe) link: string) {
     await this.usersService.activate(link);
+
+    const url = `${this.config.get('CLIENT_URL')}` || DEFAULT_CLIENT_URL;
+
+    return { url };
   }
 }
