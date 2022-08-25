@@ -7,6 +7,9 @@ import { config } from './orm.config';
 import { UsersModule } from './users/users.module';
 import { ProfilesModule } from './profiles/profiles.module';
 import { MailModule } from './mail/mail.module';
+import { TokensModule } from './tokens/tokens.module';
+import { APP_GUARD } from '@nestjs/core';
+import { JwtAccessAuthGuard } from './core/guards/jwt-access.guard';
 
 @Module({
   imports: [
@@ -15,8 +18,15 @@ import { MailModule } from './mail/mail.module';
     UsersModule,
     ProfilesModule,
     MailModule,
+    TokensModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [
+    AppService,
+    {
+      provide: APP_GUARD,
+      useClass: JwtAccessAuthGuard,
+    },
+  ],
 })
 export class AppModule {}

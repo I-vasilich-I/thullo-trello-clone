@@ -1,3 +1,11 @@
-import { RegisterUserDto } from './register-user.dto';
+import { IsNotEmpty, IsString } from 'class-validator';
 
-export type CreateUserDto = Omit<RegisterUserDto, 'userName'>;
+export class CreateUserDto {
+  @IsNotEmpty()
+  @IsString()
+  email: string;
+
+  @IsNotEmpty()
+  @IsString()
+  password: string;
+}

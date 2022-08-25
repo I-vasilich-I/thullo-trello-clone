@@ -8,4 +8,7 @@ export class RepositoryFake {
   public async findOneBy(): Promise<void> {
     return;
   }
+  public async delete(): Promise<void> {
+    return;
+  }
 }
