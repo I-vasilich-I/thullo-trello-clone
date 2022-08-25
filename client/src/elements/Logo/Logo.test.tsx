@@ -1,16 +1,13 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+import '@testing-library/jest-dom';
+import { render, screen } from '@testing-library/react';
+import Logo from './Logo';
 
-exports[`Header renders header unchanged 1`] = `
-<div>
-  <header
-    class="sc-202389cf-0 dKNrRN"
-  >
-    <div
-      class="sc-202389cf-1 iZIhvI"
-    >
-      <div
-        class="sc-202389cf-2 gKGLdo"
-      >
+describe('Logo', () => {
+  it('renders logo unchanged', () => {
+    const { container } = render(<Logo />);
+
+    expect(container).toMatchInlineSnapshot(`
+      <div>
         <a
           href="/"
         >
@@ -38,27 +35,6 @@ exports[`Header renders header unchanged 1`] = `
           </span>
         </a>
       </div>
-      <div
-        class="sc-202389cf-3 kjnAWR"
-      >
-        <div
-          class="sc-202389cf-4 pUeEx"
-        >
-          <a
-            class="sc-202389cf-5 fLRfJy"
-            href="/signin"
-          >
-            Sign in
-          </a>
-          <a
-            class="sc-202389cf-5 dtrURn"
-            href="/signup"
-          >
-            Sign up
-          </a>
-        </div>
-      </div>
-    </div>
-  </header>
-</div>
-`;
+    `);
+  });
+});
